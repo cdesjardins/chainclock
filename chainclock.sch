@@ -2853,12 +2853,13 @@ Example: COM-09117</description>
 <plain>
 <text x="175.895" y="25.4" size="2.794" layer="94">Chris Desjardins - cjd@chrisd.info
 http://blog.chrisd.info</text>
+<text x="262.255" y="7.62" size="2.794" layer="94">v1.0</text>
 </plain>
 <instances>
-<instance part="COUNTER" gate="G$1" x="68.58" y="182.88"/>
+<instance part="COUNTER" gate="G$1" x="68.58" y="180.34"/>
 <instance part="ARDUNOFIO" gate="G$1" x="27.94" y="182.88" rot="R90"/>
 <instance part="HBRIDGE" gate="G$1" x="154.94" y="177.8"/>
-<instance part="GND2" gate="1" x="88.9" y="185.42" rot="R90"/>
+<instance part="GND2" gate="1" x="88.9" y="182.88" rot="R90"/>
 <instance part="GND3" gate="1" x="132.08" y="180.34" rot="R270"/>
 <instance part="GND4" gate="1" x="177.8" y="180.34" rot="R90"/>
 <instance part="STEPPER" gate="G$1" x="205.74" y="193.04"/>
@@ -2892,11 +2893,11 @@ http://blog.chrisd.info</text>
 <net name="GND" class="0">
 <segment>
 <pinref part="COUNTER" gate="G$1" pin="GND"/>
-<wire x1="81.28" y1="190.5" x2="83.82" y2="190.5" width="0.1524" layer="91"/>
+<wire x1="81.28" y1="187.96" x2="83.82" y2="187.96" width="0.1524" layer="91"/>
 <pinref part="COUNTER" gate="G$1" pin="MR"/>
-<wire x1="81.28" y1="185.42" x2="83.82" y2="185.42" width="0.1524" layer="91"/>
-<wire x1="83.82" y1="190.5" x2="83.82" y2="185.42" width="0.1524" layer="91"/>
-<wire x1="83.82" y1="185.42" x2="86.36" y2="185.42" width="0.1524" layer="91"/>
+<wire x1="81.28" y1="182.88" x2="83.82" y2="182.88" width="0.1524" layer="91"/>
+<wire x1="83.82" y1="187.96" x2="83.82" y2="182.88" width="0.1524" layer="91"/>
+<wire x1="83.82" y1="182.88" x2="86.36" y2="182.88" width="0.1524" layer="91"/>
 <pinref part="GND2" gate="1" pin="GND"/>
 </segment>
 <segment>
@@ -2971,7 +2972,7 @@ http://blog.chrisd.info</text>
 <net name="Q14" class="0">
 <segment>
 <pinref part="COUNTER" gate="G$1" pin="Q14"/>
-<wire x1="55.88" y1="160.02" x2="53.34" y2="160.02" width="0.1524" layer="91"/>
+<wire x1="55.88" y1="157.48" x2="53.34" y2="157.48" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="ARDUNOFIO" gate="G$1" pin="D2"/>
@@ -3121,8 +3122,8 @@ http://blog.chrisd.info</text>
 </segment>
 <segment>
 <pinref part="COUNTER" gate="G$1" pin="VCC"/>
-<wire x1="81.28" y1="195.58" x2="83.82" y2="195.58" width="0.1524" layer="91"/>
-<label x="83.82" y="195.58" size="1.778" layer="95"/>
+<wire x1="81.28" y1="193.04" x2="83.82" y2="193.04" width="0.1524" layer="91"/>
+<label x="83.82" y="193.04" size="1.778" layer="95"/>
 </segment>
 <segment>
 <pinref part="HBRIDGE" gate="G$1" pin="VCC1"/>
@@ -3242,8 +3243,8 @@ http://blog.chrisd.info</text>
 <net name="RTC" class="0">
 <segment>
 <pinref part="COUNTER" gate="G$1" pin="RTC"/>
-<wire x1="81.28" y1="175.26" x2="83.82" y2="175.26" width="0.1524" layer="91"/>
-<label x="81.28" y="175.26" size="1.778" layer="95"/>
+<wire x1="81.28" y1="172.72" x2="83.82" y2="172.72" width="0.1524" layer="91"/>
+<label x="81.28" y="172.72" size="1.778" layer="95"/>
 </segment>
 <segment>
 <wire x1="119.38" y1="149.86" x2="121.92" y2="149.86" width="0.1524" layer="91"/>
