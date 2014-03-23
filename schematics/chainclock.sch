@@ -2840,13 +2840,13 @@ Example: COM-09117</description>
 <part name="C6" library="SparkFun-Capacitors" deviceset="CAP" device="KIT" value=".01uf"/>
 <part name="GND10" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 <part name="GND11" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
-<part name="R11" library="SparkFun-Resistors" deviceset="RESISTOR" device="2010" value="10k"/>
-<part name="R12" library="SparkFun-Resistors" deviceset="RESISTOR" device="2010" value="10k"/>
 <part name="GND12" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
-<part name="R5" library="SparkFun-Resistors" deviceset="RESISTOR" device="2010" value="10k"/>
-<part name="R6" library="SparkFun-Resistors" deviceset="RESISTOR" device="2010" value="10k"/>
 <part name="GND1" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 <part name="U$4" library="desjardins" deviceset="SG30XX" device="JC"/>
+<part name="R1" library="SparkFun-Resistors" deviceset="RESISTOR" device="EZ" value="10k"/>
+<part name="R2" library="SparkFun-Resistors" deviceset="RESISTOR" device="EZ" value="10k"/>
+<part name="R7" library="SparkFun-Resistors" deviceset="RESISTOR" device="EZ" value="10k"/>
+<part name="R8" library="SparkFun-Resistors" deviceset="RESISTOR" device="EZ" value="10k"/>
 </parts>
 <sheets>
 <sheet>
@@ -2879,13 +2879,13 @@ http://blog.chrisd.info</text>
 <instance part="C6" gate="G$1" x="91.44" y="88.9" rot="MR0"/>
 <instance part="GND10" gate="1" x="91.44" y="81.28" rot="MR0"/>
 <instance part="GND11" gate="1" x="50.8" y="81.28" rot="MR0"/>
-<instance part="R11" gate="G$1" x="76.2" y="106.68" rot="MR90"/>
-<instance part="R12" gate="G$1" x="66.04" y="106.68" rot="MR90"/>
 <instance part="GND12" gate="1" x="66.04" y="68.58"/>
-<instance part="R5" gate="G$1" x="83.82" y="96.52" rot="MR180"/>
-<instance part="R6" gate="G$1" x="58.42" y="96.52" rot="MR180"/>
 <instance part="GND1" gate="1" x="88.9" y="149.86" rot="R270"/>
 <instance part="U$4" gate="G$1" x="106.68" y="154.94"/>
+<instance part="R1" gate="G$1" x="76.2" y="106.68" rot="R90"/>
+<instance part="R2" gate="G$1" x="66.04" y="106.68" rot="R90"/>
+<instance part="R7" gate="G$1" x="83.82" y="96.52" rot="R180"/>
+<instance part="R8" gate="G$1" x="58.42" y="96.52"/>
 </instances>
 <busses>
 </busses>
@@ -3138,8 +3138,9 @@ http://blog.chrisd.info</text>
 <wire x1="71.12" y1="114.3" x2="71.12" y2="116.84" width="0.1524" layer="91"/>
 <junction x="71.12" y="114.3"/>
 <label x="48.26" y="127" size="1.778" layer="95"/>
-<pinref part="R11" gate="G$1" pin="2"/>
-<pinref part="R12" gate="G$1" pin="2"/>
+<pinref part="R2" gate="G$1" pin="2"/>
+<pinref part="R1" gate="G$1" pin="2"/>
+<label x="68.58" y="116.84" size="1.778" layer="95"/>
 </segment>
 <segment>
 <wire x1="119.38" y1="160.02" x2="121.92" y2="160.02" width="0.1524" layer="91"/>
@@ -3178,11 +3179,11 @@ http://blog.chrisd.info</text>
 <segment>
 <pinref part="SW1" gate="G$1" pin="B"/>
 <wire x1="76.2" y1="93.98" x2="76.2" y2="96.52" width="0.1524" layer="91"/>
-<wire x1="76.2" y1="96.52" x2="78.74" y2="96.52" width="0.1524" layer="91"/>
+<pinref part="R1" gate="G$1" pin="1"/>
+<pinref part="R7" gate="G$1" pin="2"/>
 <wire x1="76.2" y1="96.52" x2="76.2" y2="101.6" width="0.1524" layer="91"/>
+<wire x1="76.2" y1="96.52" x2="78.74" y2="96.52" width="0.1524" layer="91"/>
 <junction x="76.2" y="96.52"/>
-<pinref part="R11" gate="G$1" pin="1"/>
-<pinref part="R5" gate="G$1" pin="1"/>
 </segment>
 </net>
 <net name="N$5" class="0">
@@ -3192,44 +3193,39 @@ http://blog.chrisd.info</text>
 <wire x1="66.04" y1="96.52" x2="63.5" y2="96.52" width="0.1524" layer="91"/>
 <wire x1="66.04" y1="96.52" x2="66.04" y2="101.6" width="0.1524" layer="91"/>
 <junction x="66.04" y="96.52"/>
-<pinref part="R12" gate="G$1" pin="1"/>
-<pinref part="R6" gate="G$1" pin="2"/>
+<pinref part="R8" gate="G$1" pin="2"/>
+<pinref part="R2" gate="G$1" pin="1"/>
 </segment>
 </net>
 <net name="RENBTN" class="0">
-<segment>
-<pinref part="ARDUNOFIO" gate="G$1" pin="D6"/>
-<wire x1="43.18" y1="182.88" x2="45.72" y2="182.88" width="0.1524" layer="91"/>
-<label x="43.18" y="182.88" size="1.778" layer="95"/>
-</segment>
 <segment>
 <pinref part="SW1" gate="G$1" pin="SW+"/>
 <wire x1="76.2" y1="73.66" x2="76.2" y2="71.12" width="0.1524" layer="91"/>
 <label x="73.66" y="68.58" size="1.778" layer="95"/>
 </segment>
+<segment>
+<pinref part="ARDUNOFIO" gate="G$1" pin="D6"/>
+<wire x1="43.18" y1="182.88" x2="45.72" y2="182.88" width="0.1524" layer="91"/>
+<label x="43.18" y="182.88" size="1.778" layer="95"/>
+</segment>
 </net>
 <net name="RENCB" class="0">
 <segment>
-<pinref part="ARDUNOFIO" gate="G$1" pin="D11"/>
-<wire x1="43.18" y1="195.58" x2="45.72" y2="195.58" width="0.1524" layer="91"/>
-<label x="43.18" y="195.58" size="1.778" layer="95"/>
-</segment>
-<segment>
-<wire x1="88.9" y1="96.52" x2="91.44" y2="96.52" width="0.1524" layer="91"/>
 <wire x1="91.44" y1="96.52" x2="93.98" y2="96.52" width="0.1524" layer="91"/>
 <wire x1="91.44" y1="96.52" x2="91.44" y2="93.98" width="0.1524" layer="91"/>
-<junction x="91.44" y="96.52"/>
 <pinref part="C6" gate="G$1" pin="1"/>
 <label x="101.6" y="96.52" size="1.778" layer="95" rot="MR0"/>
-<pinref part="R5" gate="G$1" pin="2"/>
+<pinref part="R7" gate="G$1" pin="1"/>
+<wire x1="91.44" y1="96.52" x2="88.9" y2="96.52" width="0.1524" layer="91"/>
+<junction x="91.44" y="96.52"/>
+</segment>
+<segment>
+<pinref part="ARDUNOFIO" gate="G$1" pin="A2"/>
+<wire x1="12.7" y1="187.96" x2="10.16" y2="187.96" width="0.1524" layer="91"/>
+<label x="5.08" y="187.96" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="RENCA" class="0">
-<segment>
-<pinref part="ARDUNOFIO" gate="G$1" pin="D12"/>
-<wire x1="43.18" y1="198.12" x2="45.72" y2="198.12" width="0.1524" layer="91"/>
-<label x="43.18" y="198.12" size="1.778" layer="95"/>
-</segment>
 <segment>
 <wire x1="53.34" y1="96.52" x2="50.8" y2="96.52" width="0.1524" layer="91"/>
 <wire x1="50.8" y1="96.52" x2="48.26" y2="96.52" width="0.1524" layer="91"/>
@@ -3237,7 +3233,12 @@ http://blog.chrisd.info</text>
 <junction x="50.8" y="96.52"/>
 <pinref part="C5" gate="G$1" pin="1"/>
 <label x="48.26" y="96.52" size="1.778" layer="95" rot="MR0"/>
-<pinref part="R6" gate="G$1" pin="1"/>
+<pinref part="R8" gate="G$1" pin="1"/>
+</segment>
+<segment>
+<pinref part="ARDUNOFIO" gate="G$1" pin="A1"/>
+<wire x1="12.7" y1="185.42" x2="10.16" y2="185.42" width="0.1524" layer="91"/>
+<label x="5.08" y="185.42" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="RTC" class="0">
