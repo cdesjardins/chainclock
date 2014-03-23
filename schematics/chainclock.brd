@@ -1480,7 +1480,7 @@ design rules under a new name.</description>
 <element name="C3" library="SparkFun-Passives" package="CPOL-RADIAL-100UF-25V" value="" x="30.56" y="36.195" rot="R270"/>
 <element name="C4" library="SparkFun-Passives" package="CPOL-RADIAL-100UF-25V" value="" x="37.465" y="36.195" rot="R270"/>
 <element name="R4" library="SparkFun-Resistors" package="AXIAL-0.3EZ" value="1.35k" x="45.72" y="28.575" rot="R90"/>
-<element name="U$2" library="desjardins" package="NEMA14" value="" x="81.83" y="19.905" rot="R90"/>
+<element name="U$2" library="desjardins" package="NEMA14" value="" x="81.5" y="20" rot="R90"/>
 <element name="U$3" library="desjardins" package="LOGO" value="" x="66.945" y="29.845" rot="MR270"/>
 <element name="SW1" library="SparkFun-Electromechanical" package="ROTARY_ENC_PLAIN" value="ROTARTY_ENCODER" x="54.705" y="9.525" rot="MR180"/>
 <element name="C5" library="SparkFun-Capacitors" package="CAP-PTH-SMALL-KIT" value=".01uf" x="22.86" y="36.195" rot="R90"/>
