@@ -454,7 +454,11 @@
 <wire x1="0" y1="0" x2="10.5" y2="0" width="0.127" layer="21"/>
 <wire x1="10.5" y1="0" x2="10.5" y2="6.7" width="0.127" layer="21"/>
 <wire x1="10.5" y1="6.7" x2="0" y2="6.7" width="0.127" layer="21"/>
-<wire x1="0" y1="6.7" x2="0" y2="0" width="0.127" layer="21"/>
+<wire x1="0" y1="6.7" x2="0" y2="4.445" width="0.127" layer="21"/>
+<wire x1="0" y1="4.445" x2="0" y2="1.905" width="0.127" layer="21"/>
+<wire x1="0" y1="1.905" x2="0" y2="0" width="0.127" layer="21"/>
+<wire x1="0" y1="4.445" x2="1.27" y2="3.175" width="0.127" layer="21" curve="-90"/>
+<wire x1="1.27" y1="3.175" x2="0" y2="1.905" width="0.127" layer="21" curve="-90"/>
 </package>
 <package name="V78-500">
 <wire x1="-5.8" y1="-3" x2="5.8" y2="-3" width="0.127" layer="51"/>
@@ -588,6 +592,7 @@
 <wire x1="-7.62" y1="7.62" x2="7.62" y2="7.62" width="0.254" layer="94"/>
 <wire x1="7.62" y1="7.62" x2="7.62" y2="-7.62" width="0.254" layer="94"/>
 <wire x1="7.62" y1="-7.62" x2="-7.62" y2="-7.62" width="0.254" layer="94"/>
+<text x="-7.62" y="10.16" size="1.778" layer="96">&gt;NAME</text>
 </symbol>
 <symbol name="V78-500">
 <pin name="VIN" x="10.16" y="-5.08" length="middle" direction="pwr" rot="R180"/>
@@ -3218,7 +3223,7 @@ Example: COM-09117</description>
 <part name="GND11" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 <part name="GND12" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 <part name="GND1" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
-<part name="U$4" library="desjardins" deviceset="SG30XX" device="JC"/>
+<part name="SG3040JC" library="desjardins" deviceset="SG30XX" device="JC"/>
 <part name="R1" library="SparkFun-Resistors" deviceset="RESISTOR" device="EZ" value="10k"/>
 <part name="R2" library="SparkFun-Resistors" deviceset="RESISTOR" device="EZ" value="10k"/>
 <part name="R7" library="SparkFun-Resistors" deviceset="RESISTOR" device="EZ" value="10k"/>
@@ -3266,7 +3271,7 @@ http://blog.chrisd.info</text>
 <instance part="GND11" gate="1" x="50.8" y="81.28" rot="MR0"/>
 <instance part="GND12" gate="1" x="66.04" y="68.58"/>
 <instance part="GND1" gate="1" x="88.9" y="149.86" rot="R270"/>
-<instance part="U$4" gate="G$1" x="106.68" y="154.94"/>
+<instance part="SG3040JC" gate="G$1" x="106.68" y="154.94"/>
 <instance part="R1" gate="G$1" x="76.2" y="106.68" rot="R90"/>
 <instance part="R2" gate="G$1" x="66.04" y="106.68" rot="R90"/>
 <instance part="R7" gate="G$1" x="83.82" y="96.52" rot="R180"/>
@@ -3360,7 +3365,7 @@ http://blog.chrisd.info</text>
 <segment>
 <wire x1="93.98" y1="149.86" x2="91.44" y2="149.86" width="0.1524" layer="91"/>
 <pinref part="GND1" gate="1" pin="GND"/>
-<pinref part="U$4" gate="G$1" pin="GND"/>
+<pinref part="SG3040JC" gate="G$1" pin="GND"/>
 </segment>
 <segment>
 <pinref part="U$1" gate="G$1" pin="GND"/>
@@ -3564,12 +3569,12 @@ http://blog.chrisd.info</text>
 <segment>
 <wire x1="119.38" y1="160.02" x2="121.92" y2="160.02" width="0.1524" layer="91"/>
 <label x="121.92" y="160.02" size="1.778" layer="95"/>
-<pinref part="U$4" gate="G$1" pin="VCC"/>
+<pinref part="SG3040JC" gate="G$1" pin="VCC"/>
 </segment>
 <segment>
 <wire x1="93.98" y1="160.02" x2="91.44" y2="160.02" width="0.1524" layer="91"/>
 <label x="88.9" y="160.02" size="1.778" layer="95"/>
-<pinref part="U$4" gate="G$1" pin="VIO"/>
+<pinref part="SG3040JC" gate="G$1" pin="VIO"/>
 </segment>
 </net>
 <net name="VDD12" class="0">
@@ -3669,7 +3674,7 @@ http://blog.chrisd.info</text>
 <segment>
 <wire x1="119.38" y1="149.86" x2="121.92" y2="149.86" width="0.1524" layer="91"/>
 <label x="121.92" y="149.86" size="1.778" layer="95"/>
-<pinref part="U$4" gate="G$1" pin="OUT"/>
+<pinref part="SG3040JC" gate="G$1" pin="OUT"/>
 </segment>
 </net>
 <net name="VOUTSOLAR" class="0">
