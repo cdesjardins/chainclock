@@ -2927,7 +2927,7 @@ http://blog.chrisd.info</text>
 <segment>
 <pinref part="U$4" gate="G$1" pin="D2"/>
 <wire x1="134.62" y1="116.84" x2="132.08" y2="116.84" width="0.1524" layer="91"/>
-<label x="127" y="116.84" size="1.778" layer="95"/>
+<label x="132.08" y="119.38" size="1.778" layer="95" rot="R180"/>
 </segment>
 <segment>
 <pinref part="COUNTER4060_2" gate="G$1" pin="Q4"/>
@@ -2954,7 +2954,7 @@ http://blog.chrisd.info</text>
 <segment>
 <pinref part="U$4" gate="G$1" pin="D10"/>
 <wire x1="134.62" y1="96.52" x2="132.08" y2="96.52" width="0.1524" layer="91"/>
-<label x="129.54" y="96.52" size="1.778" layer="95"/>
+<label x="132.08" y="99.06" size="1.778" layer="95" rot="R180"/>
 </segment>
 </net>
 <net name="1A" class="0">
@@ -2966,7 +2966,7 @@ http://blog.chrisd.info</text>
 <segment>
 <pinref part="U$4" gate="G$1" pin="D8"/>
 <wire x1="134.62" y1="101.6" x2="132.08" y2="101.6" width="0.1524" layer="91"/>
-<label x="129.54" y="101.6" size="1.778" layer="95"/>
+<label x="132.08" y="104.14" size="1.778" layer="95" rot="R180"/>
 </segment>
 </net>
 <net name="1Y" class="0">
@@ -2990,7 +2990,7 @@ http://blog.chrisd.info</text>
 <segment>
 <pinref part="U$4" gate="G$1" pin="D12"/>
 <wire x1="134.62" y1="91.44" x2="132.08" y2="91.44" width="0.1524" layer="91"/>
-<label x="129.54" y="91.44" size="1.778" layer="95"/>
+<label x="132.08" y="93.98" size="1.778" layer="95" rot="R180"/>
 </segment>
 </net>
 <net name="4Y" class="0">
@@ -3026,7 +3026,7 @@ http://blog.chrisd.info</text>
 <segment>
 <pinref part="U$4" gate="G$1" pin="D11"/>
 <wire x1="134.62" y1="93.98" x2="132.08" y2="93.98" width="0.1524" layer="91"/>
-<label x="129.54" y="93.98" size="1.778" layer="95"/>
+<label x="132.08" y="96.52" size="1.778" layer="95" rot="R180"/>
 </segment>
 </net>
 <net name="2A" class="0">
@@ -3038,7 +3038,7 @@ http://blog.chrisd.info</text>
 <segment>
 <pinref part="U$4" gate="G$1" pin="D9"/>
 <wire x1="134.62" y1="99.06" x2="132.08" y2="99.06" width="0.1524" layer="91"/>
-<label x="129.54" y="99.06" size="1.778" layer="95"/>
+<label x="132.08" y="101.6" size="1.778" layer="95" rot="R180"/>
 </segment>
 </net>
 <net name="2Y" class="0">
@@ -3111,7 +3111,7 @@ http://blog.chrisd.info</text>
 <segment>
 <pinref part="U$4" gate="G$1" pin="D6"/>
 <wire x1="134.62" y1="106.68" x2="132.08" y2="106.68" width="0.1524" layer="91"/>
-<label x="121.92" y="106.68" size="1.778" layer="95"/>
+<label x="132.08" y="109.22" size="1.778" layer="95" rot="R180"/>
 </segment>
 </net>
 <net name="RENCB" class="0">
@@ -3125,9 +3125,9 @@ http://blog.chrisd.info</text>
 <junction x="91.44" y="96.52"/>
 </segment>
 <segment>
-<pinref part="U$4" gate="G$1" pin="A1"/>
-<wire x1="162.56" y1="101.6" x2="165.1" y2="101.6" width="0.1524" layer="91"/>
-<label x="165.1" y="101.6" size="1.778" layer="95"/>
+<pinref part="U$4" gate="G$1" pin="D4"/>
+<wire x1="134.62" y1="111.76" x2="132.08" y2="111.76" width="0.1524" layer="91"/>
+<label x="132.08" y="114.3" size="1.778" layer="95" rot="R180"/>
 </segment>
 </net>
 <net name="RENCA" class="0">
@@ -3141,9 +3141,9 @@ http://blog.chrisd.info</text>
 <pinref part="R8" gate="G$1" pin="1"/>
 </segment>
 <segment>
-<pinref part="U$4" gate="G$1" pin="A2"/>
-<wire x1="162.56" y1="104.14" x2="165.1" y2="104.14" width="0.1524" layer="91"/>
-<label x="165.1" y="104.14" size="1.778" layer="95"/>
+<pinref part="U$4" gate="G$1" pin="D3"/>
+<wire x1="134.62" y1="114.3" x2="132.08" y2="114.3" width="0.1524" layer="91"/>
+<label x="132.08" y="116.84" size="1.778" layer="95" rot="R180"/>
 </segment>
 </net>
 <net name="RTC" class="0">

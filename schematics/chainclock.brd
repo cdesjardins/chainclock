@@ -8,7 +8,7 @@
 </settings>
 <grid distance="0.025" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.025" altunitdist="inch" altunit="inch"/>
 <layers>
-<layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
+<layer number="1" name="Top" color="4" fill="1" visible="no" active="yes"/>
 <layer number="16" name="Bottom" color="1" fill="1" visible="yes" active="yes"/>
 <layer number="17" name="Pads" color="2" fill="1" visible="yes" active="yes"/>
 <layer number="18" name="Vias" color="2" fill="1" visible="yes" active="yes"/>
@@ -1549,21 +1549,27 @@ design rules under a new name.</description>
 <signal name="RENCB">
 <contactref element="C6" pad="1"/>
 <contactref element="R7" pad="P$1"/>
-<contactref element="U$4" pad="P22"/>
-<wire x1="6.985" y1="33.02" x2="11.43" y2="37.465" width="0.3048" layer="16"/>
 <wire x1="11.43" y1="37.465" x2="12.065" y2="37.465" width="0.3048" layer="16"/>
 <wire x1="15.113" y1="34.925" x2="14.605" y2="34.925" width="0.3048" layer="1"/>
 <wire x1="14.605" y1="34.925" x2="12.065" y2="37.465" width="0.3048" layer="1"/>
+<contactref element="U$4" pad="P9"/>
+<wire x1="15.113" y1="34.925" x2="15.113" y2="32.512" width="0.3048" layer="16"/>
+<wire x1="15.113" y1="32.512" x2="18.415" y2="29.21" width="0.3048" layer="16"/>
+<wire x1="18.415" y1="29.21" x2="18.415" y2="24.765" width="0.3048" layer="16"/>
+<wire x1="18.415" y1="24.765" x2="20.32" y2="22.86" width="0.3048" layer="16"/>
+<wire x1="20.32" y1="22.86" x2="22.225" y2="22.86" width="0.3048" layer="16"/>
 </signal>
 <signal name="RENCA">
 <contactref element="C5" pad="1"/>
 <contactref element="R8" pad="P$1"/>
-<contactref element="U$4" pad="P23"/>
-<wire x1="6.985" y1="30.48" x2="7.62" y2="30.48" width="0.3048" layer="16"/>
 <wire x1="7.62" y1="30.48" x2="12.065" y2="26.035" width="0.3048" layer="16"/>
 <wire x1="12.065" y1="26.035" x2="12.065" y2="26.67" width="0.3048" layer="1"/>
 <wire x1="12.065" y1="26.67" x2="13.335" y2="27.94" width="0.3048" layer="1"/>
 <wire x1="13.335" y1="27.94" x2="13.843" y2="27.94" width="0.3048" layer="1"/>
+<contactref element="U$4" pad="P8"/>
+<wire x1="13.843" y1="27.94" x2="13.843" y2="26.797" width="0.3048" layer="16"/>
+<wire x1="13.843" y1="26.797" x2="20.32" y2="20.32" width="0.3048" layer="16"/>
+<wire x1="20.32" y1="20.32" x2="22.225" y2="20.32" width="0.3048" layer="16"/>
 </signal>
 <signal name="RTC">
 <contactref element="SG3040JC" pad="3"/>
