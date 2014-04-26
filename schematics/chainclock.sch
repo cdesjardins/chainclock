@@ -1946,6 +1946,8 @@ Standard 9-pin 0.1" header. Use with straight break away headers (SKU : PRT-0011
 <part name="GND14" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 <part name="C3" library="SparkFun-Capacitors" deviceset="0.1UF-50V-20%(PTH)" device="KIT-EZ" value="100uf"/>
 <part name="C4" library="SparkFun-Capacitors" deviceset="0.1UF-50V-20%(PTH)" device="KIT-EZ" value="100uf"/>
+<part name="GND7" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
+<part name="GND12" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -1986,6 +1988,8 @@ http://blog.chrisd.info</text>
 <instance part="GND14" gate="1" x="142.24" y="68.58" rot="MR270"/>
 <instance part="C3" gate="G$1" x="193.04" y="119.38"/>
 <instance part="C4" gate="G$1" x="241.3" y="119.38"/>
+<instance part="GND7" gate="1" x="119.38" y="119.38" rot="MR90"/>
+<instance part="GND12" gate="1" x="167.64" y="124.46" rot="MR270"/>
 </instances>
 <busses>
 </busses>
@@ -2072,6 +2076,16 @@ http://blog.chrisd.info</text>
 <wire x1="121.92" y1="68.58" x2="139.7" y2="68.58" width="0.1524" layer="91"/>
 <junction x="121.92" y="66.04"/>
 <pinref part="GND14" gate="1" pin="GND"/>
+</segment>
+<segment>
+<pinref part="U$4" gate="G$1" pin="GND0"/>
+<wire x1="134.62" y1="119.38" x2="121.92" y2="119.38" width="0.1524" layer="91"/>
+<pinref part="GND7" gate="1" pin="GND"/>
+</segment>
+<segment>
+<pinref part="U$4" gate="G$1" pin="GND1"/>
+<wire x1="162.56" y1="124.46" x2="165.1" y2="124.46" width="0.1524" layer="91"/>
+<pinref part="GND12" gate="1" pin="GND"/>
 </segment>
 </net>
 <net name="CLOCKIN" class="0">
