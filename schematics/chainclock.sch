@@ -2153,9 +2153,9 @@ http://blog.chrisd.info</text>
 <label x="170.18" y="195.58" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="U$4" gate="G$1" pin="D12"/>
-<wire x1="134.62" y1="91.44" x2="132.08" y2="91.44" width="0.1524" layer="91"/>
-<label x="132.08" y="93.98" size="1.778" layer="95" rot="R180"/>
+<pinref part="U$4" gate="G$1" pin="D11"/>
+<wire x1="134.62" y1="93.98" x2="132.08" y2="93.98" width="0.1524" layer="91"/>
+<label x="132.08" y="96.52" size="1.778" layer="95" rot="R180"/>
 </segment>
 </net>
 <net name="4Y" class="0">
@@ -2189,9 +2189,9 @@ http://blog.chrisd.info</text>
 <label x="170.18" y="170.18" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="U$4" gate="G$1" pin="D11"/>
-<wire x1="134.62" y1="93.98" x2="132.08" y2="93.98" width="0.1524" layer="91"/>
-<label x="132.08" y="96.52" size="1.778" layer="95" rot="R180"/>
+<pinref part="U$4" gate="G$1" pin="D12"/>
+<wire x1="134.62" y1="91.44" x2="132.08" y2="91.44" width="0.1524" layer="91"/>
+<label x="132.08" y="93.98" size="1.778" layer="95" rot="R180"/>
 </segment>
 </net>
 <net name="2A" class="0">
