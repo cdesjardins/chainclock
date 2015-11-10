@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="6.5.0">
+<eagle version="7.4.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -1933,7 +1933,7 @@ Standard 9-pin 0.1" header. Use with straight break away headers (SKU : PRT-0011
 <part name="R7" library="SparkFun-Resistors" deviceset="RESISTOR" device="EZ" value="10k"/>
 <part name="R8" library="SparkFun-Resistors" deviceset="RESISTOR" device="EZ" value="10k"/>
 <part name="U$4" library="ChrisD" deviceset="ARDUINO_PRO_MICRO" device=""/>
-<part name="U$1" library="desjardins" deviceset="PTN0405C" device=""/>
+<part name="PTN04050" library="desjardins" deviceset="PTN0405C" device=""/>
 <part name="R4" library="SparkFun-Resistors" deviceset="RESISTOR" device="EZ" value="12k"/>
 <part name="GND6" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 <part name="GND8" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
@@ -1948,6 +1948,7 @@ Standard 9-pin 0.1" header. Use with straight break away headers (SKU : PRT-0011
 <part name="C4" library="SparkFun-Capacitors" deviceset="0.1UF-50V-20%(PTH)" device="KIT-EZ" value="100uf"/>
 <part name="GND7" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 <part name="GND12" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
+<part name="JP2" library="SparkFun-Connectors" deviceset="M09" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -1975,7 +1976,7 @@ http://blog.chrisd.info</text>
 <instance part="R7" gate="G$1" x="83.82" y="96.52" rot="R180"/>
 <instance part="R8" gate="G$1" x="58.42" y="96.52"/>
 <instance part="U$4" gate="G$1" x="147.32" y="116.84"/>
-<instance part="U$1" gate="G$1" x="213.36" y="134.62"/>
+<instance part="PTN04050" gate="G$1" x="213.36" y="134.62"/>
 <instance part="R4" gate="G$1" x="187.96" y="139.7" rot="R180"/>
 <instance part="GND6" gate="1" x="241.3" y="111.76"/>
 <instance part="GND8" gate="1" x="193.04" y="111.76"/>
@@ -1990,6 +1991,7 @@ http://blog.chrisd.info</text>
 <instance part="C4" gate="G$1" x="241.3" y="119.38"/>
 <instance part="GND7" gate="1" x="119.38" y="119.38" rot="MR90"/>
 <instance part="GND12" gate="1" x="167.64" y="124.46" rot="MR270"/>
+<instance part="JP2" gate="G$1" x="172.72" y="66.04"/>
 </instances>
 <busses>
 </busses>
@@ -2001,8 +2003,11 @@ http://blog.chrisd.info</text>
 <wire x1="137.16" y1="185.42" x2="137.16" y2="180.34" width="0.1524" layer="91"/>
 <pinref part="HBRIDGE" gate="G$1" pin="GND@1"/>
 <wire x1="137.16" y1="180.34" x2="139.7" y2="180.34" width="0.1524" layer="91"/>
-<wire x1="139.7" y1="180.34" x2="134.62" y2="180.34" width="0.1524" layer="91"/>
+<wire x1="139.7" y1="180.34" x2="137.16" y2="180.34" width="0.1524" layer="91"/>
 <pinref part="GND3" gate="1" pin="GND"/>
+<junction x="137.16" y="180.34"/>
+<wire x1="137.16" y1="180.34" x2="134.62" y2="180.34" width="0.1524" layer="91"/>
+<junction x="139.7" y="180.34"/>
 </segment>
 <segment>
 <pinref part="HBRIDGE" gate="G$1" pin="GND@3"/>
@@ -2010,8 +2015,11 @@ http://blog.chrisd.info</text>
 <wire x1="172.72" y1="185.42" x2="172.72" y2="180.34" width="0.1524" layer="91"/>
 <pinref part="HBRIDGE" gate="G$1" pin="GND@2"/>
 <wire x1="172.72" y1="180.34" x2="170.18" y2="180.34" width="0.1524" layer="91"/>
-<wire x1="170.18" y1="180.34" x2="175.26" y2="180.34" width="0.1524" layer="91"/>
+<wire x1="170.18" y1="180.34" x2="172.72" y2="180.34" width="0.1524" layer="91"/>
 <pinref part="GND4" gate="1" pin="GND"/>
+<junction x="172.72" y="180.34"/>
+<wire x1="172.72" y1="180.34" x2="175.26" y2="180.34" width="0.1524" layer="91"/>
+<junction x="170.18" y="180.34"/>
 </segment>
 <segment>
 <pinref part="R3" gate="G$1" pin="2"/>
@@ -2056,6 +2064,7 @@ http://blog.chrisd.info</text>
 <wire x1="48.26" y1="180.34" x2="45.72" y2="180.34" width="0.1524" layer="91"/>
 <wire x1="48.26" y1="180.34" x2="50.8" y2="180.34" width="0.1524" layer="91"/>
 <pinref part="GND9" gate="1" pin="GND"/>
+<junction x="48.26" y="180.34"/>
 </segment>
 <segment>
 <pinref part="COUNTER4060_2" gate="G$1" pin="GND"/>
@@ -2065,6 +2074,7 @@ http://blog.chrisd.info</text>
 <wire x1="48.26" y1="121.92" x2="45.72" y2="121.92" width="0.1524" layer="91"/>
 <wire x1="48.26" y1="121.92" x2="50.8" y2="121.92" width="0.1524" layer="91"/>
 <pinref part="GND2" gate="1" pin="GND"/>
+<junction x="48.26" y="121.92"/>
 </segment>
 <segment>
 <pinref part="JP3" gate="G$1" pin="4"/>
@@ -2086,6 +2096,11 @@ http://blog.chrisd.info</text>
 <pinref part="U$4" gate="G$1" pin="GND1"/>
 <wire x1="162.56" y1="124.46" x2="165.1" y2="124.46" width="0.1524" layer="91"/>
 <pinref part="GND12" gate="1" pin="GND"/>
+</segment>
+<segment>
+<pinref part="JP2" gate="G$1" pin="8"/>
+<wire x1="182.88" y1="73.66" x2="185.42" y2="73.66" width="0.1524" layer="91"/>
+<label x="182.88" y="73.66" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="CLOCKIN" class="0">
@@ -2345,7 +2360,7 @@ http://blog.chrisd.info</text>
 <label x="132.08" y="165.1" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="U$1" gate="G$1" pin="VOUT"/>
+<pinref part="PTN04050" gate="G$1" pin="VOUT"/>
 <wire x1="231.14" y1="139.7" x2="241.3" y2="139.7" width="0.1524" layer="91"/>
 <wire x1="241.3" y1="139.7" x2="243.84" y2="139.7" width="0.1524" layer="91"/>
 <wire x1="241.3" y1="139.7" x2="241.3" y2="124.46" width="0.1524" layer="91"/>
@@ -2376,10 +2391,15 @@ http://blog.chrisd.info</text>
 <pinref part="R1" gate="G$1" pin="2"/>
 <label x="68.58" y="116.84" size="1.778" layer="95"/>
 </segment>
+<segment>
+<pinref part="JP2" gate="G$1" pin="9"/>
+<wire x1="182.88" y1="76.2" x2="185.42" y2="76.2" width="0.1524" layer="91"/>
+<label x="182.88" y="76.2" size="1.778" layer="95"/>
+</segment>
 </net>
 <net name="N$1" class="0">
 <segment>
-<pinref part="U$1" gate="G$1" pin="GND"/>
+<pinref part="PTN04050" gate="G$1" pin="GND"/>
 <wire x1="195.58" y1="139.7" x2="193.04" y2="139.7" width="0.1524" layer="91"/>
 <pinref part="R4" gate="G$1" pin="1"/>
 </segment>
@@ -2391,14 +2411,14 @@ http://blog.chrisd.info</text>
 <label x="175.26" y="139.7" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="U$1" gate="G$1" pin="VOADJ"/>
+<pinref part="PTN04050" gate="G$1" pin="VOADJ"/>
 <wire x1="231.14" y1="129.54" x2="233.68" y2="129.54" width="0.1524" layer="91"/>
 <label x="231.14" y="129.54" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="VBATT" class="0">
 <segment>
-<pinref part="U$1" gate="G$1" pin="VIN"/>
+<pinref part="PTN04050" gate="G$1" pin="VIN"/>
 <wire x1="195.58" y1="132.08" x2="193.04" y2="132.08" width="0.1524" layer="91"/>
 <wire x1="193.04" y1="132.08" x2="190.5" y2="132.08" width="0.1524" layer="91"/>
 <wire x1="193.04" y1="132.08" x2="193.04" y2="124.46" width="0.1524" layer="91"/>
@@ -2424,9 +2444,107 @@ http://blog.chrisd.info</text>
 <label x="48.26" y="111.76" size="1.778" layer="95"/>
 </segment>
 </net>
+<net name="D13" class="0">
+<segment>
+<pinref part="U$4" gate="G$1" pin="D13"/>
+<wire x1="162.56" y1="91.44" x2="165.1" y2="91.44" width="0.1524" layer="91"/>
+<label x="165.1" y="91.44" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="JP2" gate="G$1" pin="1"/>
+<wire x1="182.88" y1="55.88" x2="185.42" y2="55.88" width="0.1524" layer="91"/>
+<label x="182.88" y="55.88" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="A0" class="0">
+<segment>
+<pinref part="U$4" gate="G$1" pin="A0"/>
+<wire x1="162.56" y1="99.06" x2="165.1" y2="99.06" width="0.1524" layer="91"/>
+<label x="165.1" y="99.06" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="JP2" gate="G$1" pin="2"/>
+<wire x1="182.88" y1="58.42" x2="185.42" y2="58.42" width="0.1524" layer="91"/>
+<label x="182.88" y="58.42" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="A1" class="0">
+<segment>
+<pinref part="U$4" gate="G$1" pin="A1"/>
+<wire x1="162.56" y1="101.6" x2="165.1" y2="101.6" width="0.1524" layer="91"/>
+<label x="165.1" y="101.6" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="JP2" gate="G$1" pin="3"/>
+<wire x1="182.88" y1="60.96" x2="185.42" y2="60.96" width="0.1524" layer="91"/>
+<label x="182.88" y="60.96" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="A2" class="0">
+<segment>
+<pinref part="U$4" gate="G$1" pin="A2"/>
+<wire x1="162.56" y1="104.14" x2="165.1" y2="104.14" width="0.1524" layer="91"/>
+<label x="165.1" y="104.14" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="JP2" gate="G$1" pin="4"/>
+<wire x1="182.88" y1="63.5" x2="185.42" y2="63.5" width="0.1524" layer="91"/>
+<label x="182.88" y="63.5" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="A3" class="0">
+<segment>
+<pinref part="U$4" gate="G$1" pin="A3"/>
+<wire x1="162.56" y1="106.68" x2="165.1" y2="106.68" width="0.1524" layer="91"/>
+<label x="165.1" y="106.68" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="JP2" gate="G$1" pin="5"/>
+<wire x1="182.88" y1="66.04" x2="185.42" y2="66.04" width="0.1524" layer="91"/>
+<label x="182.88" y="66.04" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="A4" class="0">
+<segment>
+<pinref part="U$4" gate="G$1" pin="A4"/>
+<wire x1="162.56" y1="109.22" x2="165.1" y2="109.22" width="0.1524" layer="91"/>
+<label x="165.1" y="109.22" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="JP2" gate="G$1" pin="6"/>
+<wire x1="182.88" y1="68.58" x2="185.42" y2="68.58" width="0.1524" layer="91"/>
+<label x="182.88" y="68.58" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="A5" class="0">
+<segment>
+<pinref part="U$4" gate="G$1" pin="A5"/>
+<wire x1="162.56" y1="111.76" x2="165.1" y2="111.76" width="0.1524" layer="91"/>
+<label x="165.1" y="111.76" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="JP2" gate="G$1" pin="7"/>
+<wire x1="182.88" y1="71.12" x2="185.42" y2="71.12" width="0.1524" layer="91"/>
+<label x="182.88" y="71.12" size="1.778" layer="95"/>
+</segment>
+</net>
 </nets>
 </sheet>
 </sheets>
+<errors>
+<approved hash="104,1,119.38,160.02,SG3040JC,VCC,3V3,,,"/>
+<approved hash="104,1,93.98,160.02,SG3040JC,VIO,3V3,,,"/>
+<approved hash="104,1,134.62,119.38,U$4,GND0,GND,,,"/>
+<approved hash="104,1,162.56,124.46,U$4,GND1,GND,,,"/>
+<approved hash="104,1,162.56,119.38,U$4,5V,5VREG,,,"/>
+<approved hash="204,1,162.56,96.52,U$4,REF,,,,"/>
+<approved hash="104,1,195.58,139.7,PTN04050,GND,N$1,,,"/>
+<approved hash="104,1,195.58,132.08,PTN04050,VIN,VBATT,,,"/>
+<approved hash="104,1,231.14,139.7,PTN04050,VOUT,VIN,,,"/>
+<approved hash="104,1,45.72,190.5,COUNTER4060_1,VCC,3V3,,,"/>
+<approved hash="104,1,45.72,132.08,COUNTER4060_2,VCC,3V3,,,"/>
+<approved hash="113,1,139.596,107.846,FRAME1,,,,,"/>
+</errors>
 </schematic>
 </drawing>
 <compatibility>
