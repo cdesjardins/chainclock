@@ -7,10 +7,14 @@ public:
     StepperMotor();
     void stepForward();
     void stepBackward();
+    void setEnabled(bool enable);
+    bool getEnabled();
+
 protected:
     void stepIt();
     int mStep;
     static int mSteps[];
+    bool mEnabled;
 private:
 
 };

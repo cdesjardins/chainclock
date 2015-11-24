@@ -15,25 +15,36 @@ int StepperMotor::mSteps[] = {
 };
 
 StepperMotor::StepperMotor()
-    : mStep(0)
+    : mStep(0),
+    mEnabled(false)
 {
     pinMode(CCK_STEPPER_A, OUTPUT);
     pinMode(CCK_STEPPER_B, OUTPUT);
     pinMode(CCK_STEPPER_C, OUTPUT);
     pinMode(CCK_STEPPER_D, OUTPUT);
     pinMode(CCK_ENABLE, OUTPUT);
-    digitalWrite(CCK_ENABLE, HIGH);
+}
+
+void StepperMotor::setEnabled(bool enable)
+{
+    digitalWrite(CCK_ENABLE, (enable == false) ? LOW : HIGH);
+    mEnabled = enable;
+}
+
+bool StepperMotor::getEnabled()
+{
+    return mEnabled;
 }
 
 void StepperMotor::stepForward()
 {
-    mStep = (mStep + 1) % 4;
+    mStep = (mStep + 1) & 0x03;
     stepIt();
 }
 
 void StepperMotor::stepBackward()
 {
-    mStep = (mStep - 1) % 4;
+    mStep = (mStep - 1) & 0x03;
     stepIt();
 }
 
