@@ -1,10 +1,12 @@
 #include "steppermotor.h"
 #include "rotaryencoder.h"
+#include "button.h"
 
 #define CCK_LED         13
 #define CCK_CLOCKIN     2
 #define CCK_ROTEN_A     3
 #define CCK_ROTEN_B     4
+#define CCK_ROTEN_BTN   6
 
 void stepperInterrupt();
 
@@ -13,10 +15,12 @@ class ChainClock
 public:
     ChainClock()
         : mRotaryEncoder(CCK_ROTEN_A, CCK_ROTEN_B),
+        mButton(CCK_ROTEN_BTN),
         mT0(0),
         mStepCnt(0),
         mIntCnt(0),
-        mEncoderValue(0)
+        mEncoderValue(0),
+        mButtonState(false)
     {
         Serial.begin(115200);
         pinMode(CCK_LED, OUTPUT);
@@ -26,6 +30,7 @@ public:
     {
         processStepper();
         processEncoder();
+        processButton();
     }
     /*
     ** This ISR hits every 2 seconds, in 100 seconds it needs to make 1 step.
@@ -35,19 +40,32 @@ public:
         mIntCnt++;
         if (mIntCnt >= 50)
         {
-            mStepCnt += 1;
+            mStepCnt++;
             mIntCnt = 0;
         }
         led();
     }
 protected:
+    void processButton()
+    {
+        bool state = mButton.getButtonState();
+        if (state !=  mButtonState)
+        {
+            mButtonState = state;
+            if (state == true)
+            {
+                Serial.println("Button");
+            }
+        }
+    }
+
     void processEncoder()
     {
         int encoderValue = mRotaryEncoder.readEncoder();
         if (mEncoderValue != encoderValue)
         {
+            mStepCnt -= mEncoderValue - encoderValue;
             mEncoderValue = encoderValue;
-            Serial.println(mEncoderValue, DEC);
         }
     }
 
@@ -105,10 +123,13 @@ protected:
     }
     StepperMotor mStepper;
     RotaryEncoder mRotaryEncoder;
+    Button mButton;
     long mT0;
     int8_t mStepCnt;
     uint8_t mIntCnt;
     int mEncoderValue;
+    bool mButtonState;
+
 private:
 };
 
