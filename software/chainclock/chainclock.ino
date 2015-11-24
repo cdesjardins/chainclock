@@ -2,7 +2,9 @@
 #include "rotaryencoder.h"
 #include "button.h"
 
+#define CCK_LED_RX      17
 #define CCK_LED         13
+
 #define CCK_CLOCKIN     2
 #define CCK_ROTEN_A     3
 #define CCK_ROTEN_B     4
@@ -20,9 +22,10 @@ public:
         mStepCnt(0),
         mIntCnt(0),
         mEncoderValue(0),
-        mButtonState(false)
+        mButtonState(false),
+        mFastStep(false)
     {
-        Serial.begin(115200);
+        pinMode(CCK_LED_RX, OUTPUT);
         pinMode(CCK_LED, OUTPUT);
         attachInterrupt(digitalPinToInterrupt(CCK_CLOCKIN), stepperInterrupt, CHANGE);
     }
@@ -54,9 +57,10 @@ protected:
             mButtonState = state;
             if (state == true)
             {
-                Serial.println("Button");
+                mFastStep = false;
             }
         }
+        digitalWrite(CCK_LED_RX, mFastStep == true ? HIGH : LOW);
     }
 
     void processEncoder()
@@ -66,13 +70,15 @@ protected:
         {
             mStepCnt -= mEncoderValue - encoderValue;
             mEncoderValue = encoderValue;
+            mFastStep = true;
         }
     }
 
     void processStepper()
     {
         long t = millis();
-        if ((t - mT0) > 100)
+        long delta = mFastStep == true ? 1 : 100;
+        if ((t - mT0) > mFastStep)
         {
             if (mStepCnt != 0)
             {
@@ -87,7 +93,10 @@ protected:
             }
             else
             {
-                mStepper.setEnabled(false);
+                if (mFastStep == false)
+                {
+                    mStepper.setEnabled(false);
+                }
             }
             mT0 = t;
         }
@@ -129,6 +138,7 @@ protected:
     uint8_t mIntCnt;
     int mEncoderValue;
     bool mButtonState;
+    bool mFastStep;
 
 private:
 };

@@ -29,7 +29,7 @@ int RotaryEncoder::readEncoder()
     // the rotary encoder is way too touchy, and is impossible
     // to accurately control.
     t1 = millis();
-    if ((t1 - _encoderT0) > 150)
+    if ((t1 - _encoderT0) > 10)
     {
         if (state != 0)
         {
