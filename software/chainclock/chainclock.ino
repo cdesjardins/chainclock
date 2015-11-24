@@ -18,7 +18,7 @@ public:
     ChainClock()
         : mRotaryEncoder(CCK_ROTEN_A, CCK_ROTEN_B),
         mButton(CCK_ROTEN_BTN),
-        mT0(0),
+        mStepperT0(0),
         mStepCnt(0),
         mIntCnt(0),
         mEncoderValue(0),
@@ -57,7 +57,7 @@ protected:
             mButtonState = state;
             if (state == true)
             {
-                mFastStep = false;
+
             }
         }
         digitalWrite(CCK_LED_RX, mFastStep == true ? HIGH : LOW);
@@ -71,6 +71,11 @@ protected:
             mStepCnt -= mEncoderValue - encoderValue;
             mEncoderValue = encoderValue;
             mFastStep = true;
+            mFastStepT0 = millis();
+        }
+        if ((mFastStep == true) && ((millis() - mFastStepT0) > 500))
+        {
+            mFastStep = false;
         }
     }
 
@@ -78,7 +83,7 @@ protected:
     {
         long t = millis();
         long delta = mFastStep == true ? 1 : 100;
-        if ((t - mT0) > mFastStep)
+        if ((t - mStepperT0) > delta)
         {
             if (mStepCnt != 0)
             {
@@ -98,7 +103,7 @@ protected:
                     mStepper.setEnabled(false);
                 }
             }
-            mT0 = t;
+            mStepperT0 = t;
         }
     }
     void processSteps()
@@ -133,12 +138,13 @@ protected:
     StepperMotor mStepper;
     RotaryEncoder mRotaryEncoder;
     Button mButton;
-    long mT0;
+    long mStepperT0;
     int8_t mStepCnt;
     uint8_t mIntCnt;
     int mEncoderValue;
     bool mButtonState;
     bool mFastStep;
+    long mFastStepT0;
 
 private:
 };
