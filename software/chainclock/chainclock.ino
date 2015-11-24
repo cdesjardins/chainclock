@@ -1,7 +1,10 @@
 #include "steppermotor.h"
+#include "rotaryencoder.h"
 
 #define CCK_LED         13
 #define CCK_CLOCKIN     2
+#define CCK_ROTEN_A     3
+#define CCK_ROTEN_B     4
 
 void stepperInterrupt();
 
@@ -9,15 +12,46 @@ class ChainClock
 {
 public:
     ChainClock()
-        : mT0(0),
+        : mRotaryEncoder(CCK_ROTEN_A, CCK_ROTEN_B),
+        mT0(0),
         mStepCnt(0),
-        mIntCnt(0)
+        mIntCnt(0),
+        mEncoderValue(0)
     {
         Serial.begin(115200);
         pinMode(CCK_LED, OUTPUT);
         attachInterrupt(digitalPinToInterrupt(CCK_CLOCKIN), stepperInterrupt, CHANGE);
     }
     void process()
+    {
+        processStepper();
+        processEncoder();
+    }
+    /*
+    ** This ISR hits every 2 seconds, in 100 seconds it needs to make 1 step.
+    */
+    void stepperInterruptHandler()
+    {
+        mIntCnt++;
+        if (mIntCnt >= 50)
+        {
+            mStepCnt += 1;
+            mIntCnt = 0;
+        }
+        led();
+    }
+protected:
+    void processEncoder()
+    {
+        int encoderValue = mRotaryEncoder.readEncoder();
+        if (mEncoderValue != encoderValue)
+        {
+            mEncoderValue = encoderValue;
+            Serial.println(mEncoderValue, DEC);
+        }
+    }
+
+    void processStepper()
     {
         long t = millis();
         if ((t - mT0) > 100)
@@ -40,20 +74,6 @@ public:
             mT0 = t;
         }
     }
-    /*
-    ** This ISR hits every 2 seconds, in 100 seconds it needs to make 1 step.
-    */
-    void stepperInterruptHandler()
-    {
-        mIntCnt++;
-        if (mIntCnt >= 50)
-        {
-            mStepCnt += 1;
-            mIntCnt = 0;
-        }
-        led();
-    }
-protected:
     void processSteps()
     {
         int stepCnt = 0;
@@ -76,22 +96,19 @@ protected:
         {
             mStepper.stepBackward();
         }
-        Serial.print(stepCnt, DEC);
-        Serial.print(" ");
-        Serial.println(mStepCnt, DEC);
-
     }
     void led()
     {
         static bool led = true;
         led = !led;
         digitalWrite(CCK_LED, (led ? HIGH : LOW));
-        
     }
     StepperMotor mStepper;
+    RotaryEncoder mRotaryEncoder;
     long mT0;
     int8_t mStepCnt;
     uint8_t mIntCnt;
+    int mEncoderValue;
 private:
 };
 
